@@ -1185,7 +1185,7 @@ contexts:
       scope: variable.other.readwrite.global.special.perl
       captures:
         1: punctuation.definition.variable.perl
-    - match: '[0-9_]+'
+    - match: '\b[0-9_]+\b'
       scope: variable.other.readwrite.global.special.perl
       captures:
         1: punctuation.definition.variable.perl
