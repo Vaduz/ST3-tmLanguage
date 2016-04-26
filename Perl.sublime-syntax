@@ -22,12 +22,12 @@ contexts:
         1: keyword.operator.symbols.perl
         2: support.function.perl
         3: keyword.operator.symbols.perl
-    - match: '(%|->|\+)[{\[\(]'
+    - match: '(->|\+)[{\[\(]'
       captures:
         1: keyword.operator.symbols.perl
-    # - match: '(\w+)\('
-    #   captures:
-    #     1: support.function.perl
+    - match: '(\w+)\('
+      captures:
+        1: support.function.perl
     - match: '(\\&)(\w+)'
       captures:
         1: keyword.operator.symbols.perl
@@ -41,7 +41,7 @@ contexts:
       captures:
         1: keyword.operator.symbols.perl
         2: support.function.perl
-    - match: \s+(\*\*|\!=|\?|:|\/\/|\/\/=|\|\|=|\!\!|\+=|=~|!~|~~|==|=|~=|>=|<=|=>|\.=|\.|<|>|&|&&|\||\|\||\+|-|\*|\.\*|/|\./|\\|\.\\|\^|\.\^|-=|->)\s+
+    - match: \s+(\*\*|\!=|\?|:|\/\/|\/\/=|\|\|=|\!\!|\+=|=~|!~|~~|==|=|~=|>=|<=|=>|\.=|\.|<|>|&|&&|\||\|\||\+|-|\*|\.\*|/|\./|\\|\.\\|\^|\.\^|-=|->|x)\s+
       comment: Operator symbols
       scope: keyword.operator.symbols.perl
     - match: (\+\+|\!\!|--|!)
@@ -1189,3 +1189,8 @@ contexts:
       scope: variable.other.readwrite.global.special.perl
       captures:
         1: punctuation.definition.variable.perl
+    # - match: '(@|%)([{\[\(])'
+    #   scope: variable.other.readwrite.global.special.perl
+    #   captures:
+    #     1: punctuation.definition.variable.perl
+    #     2: punctuation.section.scope.perl
