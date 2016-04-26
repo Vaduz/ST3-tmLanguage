@@ -41,10 +41,10 @@ contexts:
       captures:
         1: keyword.operator.symbols.perl
         2: support.function.perl
-    - match: \s+(\*\*|\!=|\?|:|\/\/|\/\/=|\|\|=|\!\!|\+=|=~|!~|~~|==|=|~=|>=|<=|=>|\.=|\.|<|>|&|&&|\||\|\||\+|-|\*|\.\*|/|\./|\\|\.\\|\^|\.\^|-=|->|x)\s+
+    - match: \s+(\*\*|\!=|\?|:|\/\/|\/\/=|\|\|=|\!\!|\+=|=~|!~|~~|==|=|~=|>=|<=|=>|\.=|\.|<|>|&|&&|\||\|\||\+|-|\*|\.\*|/|\./|\\|\.\\|\^|\.\^|-=|->|%=)\s+
       comment: Operator symbols
       scope: keyword.operator.symbols.perl
-    - match: (\+\+|\!\!|--|!)
+    - match: (\+\+|\!\!|--|!|\.\.|x)
       comment: Operator symbols
       scope: keyword.operator.symbols.perl
     - include: line_comment
