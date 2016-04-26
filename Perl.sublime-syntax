@@ -22,7 +22,7 @@ contexts:
         1: keyword.operator.symbols.perl
         2: support.function.perl
         3: keyword.operator.symbols.perl
-    - match: '(%|->|\+)[{\[]'
+    - match: '(%|->|\+)[{\[\(]'
       captures:
         1: keyword.operator.symbols.perl
     # - match: '(\w+)\('
