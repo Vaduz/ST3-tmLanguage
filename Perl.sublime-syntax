@@ -17,6 +17,17 @@ contexts:
       captures:
         1: keyword.operator.symbols.perl
         2: support.function.perl
+    - match: '(&)([A-Z0-9_]+)(\(\))'
+      captures:
+        1: keyword.operator.symbols.perl
+        2: support.function.perl
+        3: keyword.operator.symbols.perl
+    - match: '(->|\+)[{\[]'
+      captures:
+        1: keyword.operator.symbols.perl
+    # - match: '(\w+)\('
+    #   captures:
+    #     1: support.function.perl
     - match: '(\\&)(\w+)'
       captures:
         1: keyword.operator.symbols.perl
@@ -378,7 +389,7 @@ contexts:
           pop: true
         - include: escaped_char
         - include: variable
-    - match: ^\s*(package|use|no)\s+(\S+)\s*((#).*)?(;)$\n?
+    - match: ^\s*(package|use|no|sub)\s+(.+)\s*((#).*)?(;)$\n?
       scope: meta.class.perl
       captures:
         1: keyword.control.perl
@@ -474,7 +485,7 @@ contexts:
       scope: constant.language.perl
     - match: '\b([A-Z_]+)\b'
       scope: constant.language.perl
-    - match: (?<!->)\b(continue|die|do|else|elsif|exit|for|foreach|goto|if|last|next|redo|return|select|unless|until|wait|while|switch|case|package|require|eval|try)\b
+    - match: (?<!->)\b(continue|die|do|else|elsif|exit|for|foreach|goto|if|last|next|redo|return|select|unless|until|wait|while|switch|case|package|require|eval|try|sub|ref|use|constant)\b
       scope: keyword.control.perl
     - match: \b(my|our|local)\b
       scope: storage.modifier.perl
@@ -1171,6 +1182,10 @@ contexts:
         1: punctuation.definition.variable.perl
         2: punctuation.definition.variable.perl
     - match: '([\$\@\%](#)?)[0-9_]\b'
+      scope: variable.other.readwrite.global.special.perl
+      captures:
+        1: punctuation.definition.variable.perl
+    - match: '[0-9_]+'
       scope: variable.other.readwrite.global.special.perl
       captures:
         1: punctuation.definition.variable.perl
